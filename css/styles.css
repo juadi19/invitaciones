@@ -50,7 +50,7 @@ body {
 }
 
 div .p-image {
-    background-image: url(../img/IMAGE1.jpg);
+    background-image: url(./../img/IMAGE1.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center center;
