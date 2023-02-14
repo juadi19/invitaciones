@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Memorial Date</title>
+    <link rel="preload" href="../css/styles.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="https://pbutcher.uk/flipdown/css/flipdown/flipdown.css">
+    <script defer src="../js/script.js"></script>
+    <script src="https://kit.fontawesome.com/aa5ae12046.js" crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');   
+        @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
@@ -17,15 +19,18 @@
 </head>
 <header>
     <div>
-            <div class="p-image" id="p-image"></div>
-        </div>
+        <div class="p-image" id="p-image"></div>
+    </div>
 </header>
+
 <body>
     <div class="father-container">
+        <input type="button" onclick="play()" id="float" class="float">
+        <audio id="audio" src="../music/song.mp3" type="audio/mpeg" autoplay loop="true"></audio>
 
         <section class="sect-1">
             <div class="p-info">
-                <div class="couple-names-container">
+                <div class="couple-names-container hidden">
                     <div class="cn-cont">
                         <div class="couple-names">
                             María <br>
@@ -34,196 +39,210 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="drawing-container">
-                    <div class="drawing"><img src="../img/DIBUJO.PNG"></div>
-                </div>
-                
 
-                <div class="wedding-date">
+                <div class="drawing-container hidden">
+                    <div class="drawing animate__fadeInUp"><img src="../img/DIBUJO.PNG"></div>
+                </div>
+
+
+                <div class="wedding-date hidden">
                     <div>31 DE ENERO 2023</div>
                 </div>
 
-                <div class="location-container">
+                <div class="location-container hidden">
                     <div class="location">
                         <p>COLIMA, MX</p>
-                    </div>    
+                    </div>
                 </div>
-                
-                <div class="lq-container""> 
+
+                <div class="lq-container hidden">
                     <div class=" love-quote">
-                    <p>"Por encima de todo, vistanse de amor, que es el vinculo perfecto"</p>
+                        <p>"Por encima de todo, vistanse de amor, que es el vinculo perfecto"</p>
+                    </div>
+
+                    <div class="lq-author hidden">
+                        - COLOSENSES 3:14
+                    </div>
                 </div>
 
-                <div class="lq-author">
-                    - COLOSENSES 3:14
-                </div>
-            </div>
+                <div class="countdown-container animate__fadeInUp">
+                    <div id="year" class="year"></div>
 
-            <div class="countdown-container">
-                <div id="year" class="year"></div>
-    
-                <div id="countdown" class="countdown">
-                    <div class="time">
-                      <h2 id="days">00</h2>
-                      <small>días</small>
-                    </div>
-                    <div class="time">
-                      <h2 id="hours">00</h2>
-                      <small>hrs</small>
-                    </div>
-                    <div class="time">
-                      <h2 id="minutes">00</h2>
-                      <small>mins</small>
-                    </div>
-                    <div class="time">
-                      <h2 id="seconds">00</h2>
-                      <small>segs</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="family-container">
-                <h2>NUESTROS PADRES</h2>
-                <div class="relatives-container">
-                    <div class="relatives"> 
-                        <div>
-                            <h3>PADRES DE LA NOVIA</h3>
-                        </div>  
-                        <div>
-                            <p>Cristina Villaseñor</p>
-                            <p>Heriberto Robles</p>
-                        </div>    
-                    </div>
-
-                    <div class="relatives">
-                        <div>
-                            <h3>PADRES DEL NOVIO</h3>
-                        </div>  
-                        <div>
-                            <p>Teresa Ventura</p>
-                            <p>Gerardo Casas</p>
+                    <div id="countdown" class="countdown hidden">
+                        <div class="time">
+                            <h2 id="days">00</h2>
+                            <small>días</small>
                         </div>
-                    </div>
-                    
-                    <div class="relatives" style="margin-bottom: 25rem;">
-                        <div>
-                            <h3>NUESTROS PADRINOS</h3>
-                        </div>  
-                        <div>
-                            <p>Alejandro Casas</p>
-                            <p>Fernando Ceballos</p>
+                        <div class="time">
+                            <h2 id="hours">00</h2>
+                            <small>hrs</small>
+                        </div>
+                        <div class="time">
+                            <h2 id="minutes">00</h2>
+                            <small>mins</small>
+                        </div>
+                        <div class="time">
+                            <h2 id="seconds">00</h2>
+                            <small>segs</small>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="ceremony">
-                <div class="info-container">
-                    <div class="ceremony-info">
-                        <h2>Ceremonia Religiosa</h2>
-                        
-                        <div class="site">
-                            <p>CAPILLA NOGUERAS</p>
+                <div class="family-container">
+                    <h2>NUESTROS PADRES</h2>
+                    <div class="relatives-container">
+                        <div class="relatives">
+                            <div class="hidden">
+                                <h3>PADRES DE LA NOVIA</h3>
+                            </div>
+                            <div class="hidden">
+                                <p>Cristina Villaseñor</p>
+                                <p>Heriberto Robles</p>
+                            </div>
                         </div>
 
-                        <div class="ceremony-location">
-                            <p>COMALA, COLIMA</p>
+                        <div class="relatives">
+                            <div class="hidden">
+                                <h3>PADRES DEL NOVIO</h3>
+                            </div>
+                            <div class="hidden">
+                                <p>Teresa Ventura</p>
+                                <p>Gerardo Casas</p>
+                            </div>
                         </div>
 
-                        <div class="ceremony-time">
-                            12:00 PM
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gratitude-container">
-                <div class="gratitude">Gracias por hacer de este día algo inolvidable</div>
-            </div>
-
-            <div class="party">
-                <div class="info-container">
-                    <div class="ceremony-info">
-                        <h2>Ex Hacienda Nogueras</h2>
-                        
-                        <div class="site">
-                            <p>NOGUERAS, COMALA</p>
-                        </div>
-
-                        <div class="ceremony-time">
-                            2:00 PM
+                        <div class="relatives">
+                            <div class="hidden">
+                                <h3>NUESTROS PADRINOS</h3>
+                            </div>
+                            <div class="hidden">
+                                <p>Alejandro Casas</p>
+                                <p>Fernando Ceballos</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="itinerary">
-                <h2>ORDEN DEL DÍA</h2>
-                <img src="../img/ITINERARY.png">
-            </div>
+                <div class="ceremony">
+                    <div class="info-container hidden">
+                        <div class="ceremony-info">
+                            <h2>Ceremonia Religiosa</h2>
 
-            <div class="dc-container">
-                <div class="dress-code">Código de Vestimenta</div>
-                <div class="dc-type">FORMAL</div>
-            </div>
+                            <div class="site">
+                                <p>CAPILLA NOGUERAS</p>
+                            </div>
 
-            <div class="gt-container">
-                <div class="gt-title">Mesa de Regalos</div>
-                <div class="gt-phrase">El regalo es opcional, lo mas importante para nosotros es tu compañía</div>
-            </div>
+                            <div class="ceremony-location">
+                                <p>COMALA, COLIMA</p>
+                            </div>
 
-            <div class="gift-options">
-                <div class="gift-options-container">
-                    <div class="option">
-                        <div class="logo"><img src="../img/LIVERPOOL.webp" alt=""></div>
-                        <div>Número de Mesa de Regalos:</div>
-                        <div class="gift-code">12345678</div>
-                        <div class="button"><a href="https://mesaderegalos.liverpool.com.mx/eventodebusqueda">IR AL SITIO</a></div>
-                    </div>
-    
-                    <div class="option">
-                        <div class="logo"><img src="../img/amazon.png" alt=""></div>
-                        <div>Número de Mesa de Regalos:</div>
-                        <div>Maria & Antonio</div>
-                        <div class="button"><a href="https://www.amazon.com.mx/registries">IR AL SITIO</a></div>
-                    </div>
-    
-                    <div class="option">
-                        <div class="logo"><img src="../img/citibanamex.png" alt=""></div>
-                        <div>Heriberto Robles García</div>
-                        <div>Cuenta: 458214633</div>
-                        <div>Clabe: 01254850001434</div>
-                        <div>Tarjeta: 8840 0000 0000 0000</div>
+                            <div class="ceremony-time">
+                                12:00 PM
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+                <div class="gratitude-container hidden">
+                    <div class="gratitude">Gracias por hacer de este día algo inolvidable</div>
+                </div>
 
+                <div class="party">
+                    <div class="info-container hidden">
+                        <div class="ceremony-info">
+                            <h2>Ex Hacienda Nogueras</h2>
+
+                            <div class="site">
+                                <p>NOGUERAS, COMALA</p>
+                            </div>
+
+                            <div class="ceremony-time">
+                                2:00 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itinerary">
+                    <h2 class="hidden">ORDEN DEL DÍA</h2>
+                    <img src="../img/ITINERARY.png" class="hidden">
+                </div>
+
+                <div class="dc-container hidden">
+                    <div class="dress-code">Código de Vestimenta</div>
+                    <div class="dc-type">FORMAL</div>
+                </div>
+
+                <div class="gt-container hidden">
+                    <div class="gt-title">Mesa de Regalos</div>
+                    <div class="gt-phrase">El regalo es opcional, lo mas importante para nosotros es tu compañía</div>
+                </div>
+
+                <div class="gift-options">
+                    <div class="gift-options-container">
+                        <div class="option hidden">
+                            <div class="logo"><img src="../img/LIVERPOOL.webp" alt=""></div>
+                            <div>Número de Mesa de Regalos:</div>
+                            <div class="gift-code">12345678</div>
+                            <div class="button"><a href="https://mesaderegalos.liverpool.com.mx/eventodebusqueda">IR AL
+                                    SITIO</a></div>
+                        </div>
+
+                        <div class="option hidden">
+                            <div class="logo"><img src="../img/amazon.png" alt=""></div>
+                            <div>Número de Mesa de Regalos:</div>
+                            <div>Maria & Antonio</div>
+                            <div class="button"><a href="https://www.amazon.com.mx/registries">IR AL SITIO</a></div>
+                        </div>
+
+                        <div class="option hidden">
+                            <div class="logo"><img src="../img/citibanamex.png" alt=""></div>
+                            <div>
+                                <p>Robles García</p>
+                                <p>Cuenta: 458214633</p>
+                                <p>Cuenta: 458214633</p>
+                                <p>Clabe:</p>
+                                <p>01254850001434</p>
+                                <p>Tarjeta:</p>
+                                <p>8840 0000 0000 0000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hashtag-container">
+                    <div class="hashtag">
+                        <div class="insta-icon"><img src="../img/instaicon.png" alt=""></div>
+                        <!-- <i class="fa-brands fa-instagram"></i> -->
+                        <div class="v-line"></div>
+                        <div class="hashtag-text">#Maria&Antonio</div>
+                    </div>
+                </div>
+<!-- 
+                <div class="gallery-container">
+                    <img src="../img/galeria1.jpg" alt="" id="myImg">
+                </div> -->
+
+                <div class="container">
+                    <div class="slideshow">
+                        <img src="../img/galeria1.jpg" class="slide">
+                        <img src="../img/galeria2.jpg" class="slide">
+                        <img src="../img/galeria3.jpg" class="slide">
+                        <a class="prev-button">&#10094</a>
+                        <a class="next-button">&#10095</a>
+                    </div>
+                </div>
+
+                <div class="confirmation-container">
+                    <div></div>
+                    <div></div>
+                    <a href="https://api.whatsapp.com/send/?phone=13121324375&text=Confirmo+mi+asistencia"><img src="../img/WhatsAppButtonGreenLarge.png" style="width: 300px;" alt=""></a>
+                </div>
 
         </section>
 
-        <section>
-            
-        </section>
-    </div>
-    
-    
-
     </div>
 
-
-
-
-
-
-    <!-- 
-
-    
-     -->
-
-    <script src="../js/script.js"></script>
-    <script src="https://pbutcher.uk/flipdown/js/flipdown/flipdown.js"></script>
 </body>
 
 </html>

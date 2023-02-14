@@ -44,14 +44,53 @@ body {
 
 /*********************************************************/
 
+/* ANIMATIONS */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30%);
+    transition: all .8s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
 
 .father-container {
     display: grid;
 }
 
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #0C9 !important;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    background-image: url(../img/volume-high-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 3rem;
+    background-position: 50% 50%;
+}
+
+.icon {
+    position: fixed;
+    color: black;
+    height: 4rem;
+}
+
 div .p-image {
     background-image: url(./../img/IMAGE1.jpg);
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -63,7 +102,8 @@ div .p-image {
     flex-direction: column;
     background: url(../img/TEXTURE.jpg);
     background-size: 100%;
-}
+} 
+
 
 /* COUPLE NAMES */
 .couple-names-container {
@@ -103,6 +143,7 @@ div .p-image {
 .location-container {
     width: 100%;
 }
+
 .location {
     width: 100%;
     text-align: center;
@@ -171,7 +212,7 @@ div .p-image {
 }
 
 .family-container h2 {
-    margin-top: 15rem ;
+    margin-top: 15rem;
     margin-bottom: 11rem;
     font-size: 45px;
     font-family: 'Cardo', serif;
@@ -281,7 +322,7 @@ div .p-image {
 }
 
 .itinerary h2 {
-    margin-top: 15rem ;
+    margin-top: 15rem;
     margin-bottom: 11rem;
     font-size: 45px;
     font-family: 'Cardo', serif;
@@ -341,8 +382,9 @@ div .p-image {
 
 .gift-options-container {
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.534);
     width: 40%;
+    margin-bottom: 3rem;
 }
 
 .option {
@@ -352,7 +394,7 @@ div .p-image {
     height: auto;
 }
 
-.logo img{
+.logo img {
     width: 200px;
     height: auto;
     margin: 2rem;
@@ -385,8 +427,115 @@ div .p-image {
     transition: all 0.2s ease;
 }
 
+/* HASHTAG */
+.hashtag-container {
+    background-image: url(../img/GRADIENT.jpg);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 
-@media only screen and (max-width: 700px){
+.hashtag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.insta-icon {
+    margin-right: 6rem;
+}
+
+.insta-icon img {
+    height: 80px;
+}
+
+.hashtag-text {
+    font-size: 50px;
+    font-family: 'Cardo', serif;
+    letter-spacing: 3px;
+    color: white;
+}
+
+.v-line {
+    border-left: thick solid white;
+    height: 100px;
+    left: 50%;
+    margin-right: 6rem;
+}
+
+
+/* GALLERY */
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 750px;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 750px;
+}
+
+.slideshow img {
+    height: 750px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: 0.3s ease-out;
+
+}
+
+.slide.active {
+    width: 100%;
+    opacity: 1;
+}
+
+.prev-button,
+.next-button {
+    text-align: center;
+    position: absolute;
+    font-size: 3em;
+    border: none;
+    cursor: pointer;
+    color: white;
+    height: 100%;
+    justify-content: center;
+}
+
+.prev-button {
+    left: 0%;
+    padding: 315px 50px 300px 20px;
+}
+
+.next-button {
+    left: 91.8%;
+    padding: 315px 22px 300px 50px;
+}
+
+
+
+.confirmation-container {
+    height: 400px;
+    background-color: #111b21;
+}
+
+
+
+@media only screen and (max-width: 700px) {
 
     .p-info {
         width: 100%;
@@ -396,8 +545,7 @@ div .p-image {
 
     div .p-image {
         background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
+        background-attachment: scroll;
         height: 600px;
     }
 
@@ -409,7 +557,6 @@ div .p-image {
 
     .couple-names {
         text-align: center;
-        font-family: 'Reenie Beanie', cursive;
         font-size: 65px;
         margin-top: 4rem;
     }
@@ -441,12 +588,224 @@ div .p-image {
 
     .love-quote {
         width: 100%;
-        font-size: 44px;
+        font-size: 38px;
+        padding: 0 3rem;
     }
 
     .lq-author {
         font-size: 18px;
     }
+
+    .countdown-container {
+        background: url(../img/IMAGE2.jpg);
+        height: 800px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .countdown {
+        flex-direction: column;
+        text-align: center;
+        top: 15%;
+        font-size: 30px;
+    }
+
+    .countdown-container h2 {
+        margin: 0;
+    }
+
+    .family-container {
+        height: 910px;
+    }
+
+    .family-container h2 {
+        margin-top: 7rem;
+        margin-bottom: 7rem;
+        font-size: 40px;
+    }
+
+    .relatives {
+        margin: 2rem;
+    }
+
+    .family-container h3 {
+        margin: 4rem 0;
+        font-size: 25px;
+        font-family: 'Cardo', serif;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+
+    .family-container p {
+        font-size: 32px;
+        font-family: 'Sacramento', cursive;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-container {
+        width: 85%;
+    }
+
+    .ceremony-info h2 {
+        font-size: 45px;
+        font-family: 'Sacramento', cursive;
+        margin-bottom: 4rem;
+    }
+
+    .site {
+        font-size: 28px;
+    }
+
+    .ceremony-location {
+        font-size: 25px;
+    }
+
+    .ceremony-time {
+        font-size: 25px;
+    }
+
+    .gratitude-container {
+        margin: 8rem 3rem;
+        text-align: center;
+    }
+
+    .gratitude {
+        font-size: 32px;
+    }
+
+    .itinerary h2 {
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+
+    .itinerary img {
+        width: 100%;
+    }
+
+    .dc-container {
+        margin: 5rem 0;
+    }
+
+    .dress-code {
+        font-size: 35px;
+        margin-bottom: 3rem;
+    }
+
+    .dc-type {
+        font-size: 35px;
+    }
+
+    .gt-container {
+        margin: 2rem 0;
+    }
+
+    .gt-title {
+        font-size: 35px;
+        margin-bottom: 3rem;
+    }
+
+    .gt-phrase {
+        font-size: 20px;
+        letter-spacing: 2px;
+        margin: 0 3rem;
+    }
+
+    .gift-options {
+        justify-content: center;
+        display: flex;
+        position: relative;
+    }
+
+    .gift-options-container {
+        width: 75%;
+    }
+
+    .option {
+        font-size: 18px;
+        margin-bottom: 4rem;
+    }
+
+    .logo img {
+        width: 180px;
+    }
+
+    .option div {
+        margin: 1rem 0;
+    }
+
+    .gift-code {
+        margin: 1rem;
+    }
+
+    .option .button {
+        margin: 3rem;
+    }
+
+    .option a {
+        text-decoration: none;
+        color: black;
+        border-style: solid;
+        border-width: 1px;
+        margin-top: 3rem;
+        padding: 1.5rem 3rem;
+        font-size: 15px;
+    }
+
+    .hashtag-container {
+        width: 100%;
+        height: 200px;
+    }
+
+    .insta-icon {
+        margin-right: 1rem;
+    }
+
+    .insta-icon img {
+        height: 60px;
+    }
+
+    .hashtag-text {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .v-line {
+        margin-right: 1rem;
+        height: 80px;
+    }
+
+    .container {
+        padding: 0;
+    
+    }
+
+    .prev-button,
+    .next-button {
+        text-align: center;
+        position: relative;
+        font-size: 40px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        margin-top: 10rem;
+    }
+
+
+    /* IMAGE GALLERY */
+    .prev-button {
+        left: 10px;
+        top: 50%;
+    }
+
+    .next-button {
+        left: 52%;
+        top: 50%;
+    }
+
 
 
 }
