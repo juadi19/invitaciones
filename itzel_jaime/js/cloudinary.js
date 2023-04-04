@@ -26,7 +26,7 @@ fs.readdir(directoryPath, function (err, files) {
   } else {
     files.forEach(function (file) {
       const filePath = path.join(directoryPath, file);
-      cloudinary.uploader.upload(filePath, { folder: 'prueba', upload_preset: 'juan-upload-preset' }, function(error, result) {
+      cloudinary.uploader.upload(filePath, { folder: 'itzelyjaime', upload_preset: 'juan-upload-preset' }, function(error, result) {
         console.log(result);
       });
     });

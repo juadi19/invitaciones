@@ -91,7 +91,7 @@ body {
 
 
 div .p-image {
-    background-image: url(./../img/IMAGE1.webp);
+    background-image: url(./../img/img1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -184,7 +184,7 @@ div .p-image {
 /* COUNTDOWN */
 
 .countdown-container {
-    background: url(../img/IMAGE2.webp);
+    background: url(../img/img2.jpg);
     height: 800px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -243,7 +243,7 @@ div .p-image {
 
 /* CEREMONY */
 .ceremony {
-    background: url(../img/IMAGE3.webp);
+    background: url(../img/img3.jpg);
     background-size: cover;
     height: 800px;
     justify-content: center;
@@ -302,7 +302,7 @@ div .p-image {
 
 /* PARTY */
 .party {
-    background: url(../img/IMAGE4.webp);
+    background: url(../img/img4.jpg);
     background-size: cover;
     height: 800px;
     justify-content: center;
@@ -485,6 +485,16 @@ div .p-image {
     left: 50%;
     margin-right: 6rem;
 }
+
+
+/* PHOTO CONTAINER */
+.photo-container {
+    background: url(../img/img5.jpg);
+    background-size: cover;
+    height: 1000px;
+}
+
+
 
 
 /* GALLERY */
