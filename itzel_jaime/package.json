@@ -1,0 +1,23 @@
+{
+  "name": "invitaciones",
+  "version": "1.0.0",
+  "description": "base code to invitations project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "node ./js/upload-to-cloudinary.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juadi19/invitaciones.git"
+  },
+  "author": "Juan Diego Salazar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juadi19/invitaciones/issues"
+  },
+  "homepage": "https://github.com/juadi19/invitaciones#readme",
+  "dependencies": {
+    "cloudinary": "^1.34.0"
+  }
+}

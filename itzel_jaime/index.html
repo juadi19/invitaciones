@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Special Day MX</title>
+    <link rel="preload" as="style" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <script defer src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/aa5ae12046.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+    </style>
+</head>
+<header>
+    <div>
+        <div class="p-image" id="p-image"></div>
+    </div>
+</header>
+
+<body>
+    <div class="father-container">
+        <!-- <input type="button" onclick="play()" id="float" class="float"> -->
+        <button class="float" id="btn"><i class="fa-solid fa-play fa-xl"></i></button>
+        <audio id="audio" src="music/song1.mp3" type="audio/mpeg" loop="true"></audio>
+
+        <section class="sect-1">
+            <div class="p-info">
+                <div class="couple-names-container hidden">
+                    <div class="cn-cont">
+                        <div class="couple-names">
+                            Itzel <br>
+                            + <br>
+                            Jaime
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drawing-container hidden">
+                    <div class="drawing animate__fadeInUp"><img data-srcset="small.png 560w, medium.png 1000w" data-sizes="100vw" src="img/DIBUJO.PNG"></div>
+                </div>
+
+
+                <div class="wedding-date hidden">
+                    <div>6 DE MAYO 2023</div>
+                </div>
+
+                <div class="location-container hidden">
+                    <div class="location">
+                        <p>COLIMA, MX</p>
+                    </div>
+                </div>
+
+                <div class="lq-container hidden">
+                    <div class=" love-quote">
+                        <p>"Por encima de todo, vistanse de amor, que es el vinculo perfecto"</p>
+                    </div>
+
+                    <div class="lq-author hidden">
+                        - COLOSENSES 3:14
+                    </div>
+                </div>
+
+                <div class="countdown-container animate__fadeInUp">
+                    <div id="year" class="year"></div>
+
+                    <div id="countdown" class="countdown hidden">
+                        <div class="time">
+                            <h2 id="days">00</h2>
+                            <small>días</small>
+                        </div>
+                        <div class="time">
+                            <h2 id="hours">00</h2>
+                            <small>hrs</small>
+                        </div>
+                        <div class="time">
+                            <h2 id="minutes">00</h2>
+                            <small>mins</small>
+                        </div>
+                        <div class="time">
+                            <h2 id="seconds">00</h2>
+                            <small>segs</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="family-container">
+                    <h2>NUESTROS PADRES</h2>
+                    <div class="relatives-container">
+                        <div class="relatives">
+                            <div class="hidden">
+                                <h3>PADRES DE LA NOVIA</h3>
+                            </div>
+                            <div class="hidden">
+                                <p>Ana Delia Velasco Iñiguez</p>
+                                <p>Jorge Armando Zamora Castillo</p>
+                            </div>
+                        </div>
+
+                        <div class="relatives">
+                            <div class="hidden">
+                                <h3>PADRES DEL NOVIO</h3>
+                            </div>
+                            <div class="hidden">
+                                <p>Martha Luisa Terrones Cosio</p>
+                                <p>Ramón Castañeda Pérez</p>
+                            </div>
+                        </div>
+
+                        <div class="relatives">
+                            <div class="hidden">
+                                <h3>NUESTROS PADRINOS</h3>
+                            </div>
+                            <div class="hidden">
+                                <p>Alba E. López Quintero</p>
+                                <p>Adrian Carmona Huerta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ceremony">
+                    <div class="info-container hidden">
+                        <div class="ceremony-info">
+                            <h2>Ceremonia Religiosa</h2>
+
+                            <div class="site">
+                                <p>CAPILLA NOGUERAS</p>
+                            </div>
+
+                            <div class="ceremony-location">
+                                <p>COMALA, COLIMA</p>
+                            </div>
+
+                            <div class="ceremony-time">
+                                17:00 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gratitude-container hidden">
+                    <div class="gratitude">Gracias por hacer de este día algo inolvidable</div>
+                </div>
+
+                <div class="party">
+                    <div class="info-container hidden">
+                        <div class="ceremony-info">
+                            <h2>Campestre Ma. Elena</h2>
+
+                            <div class="site">
+                                <p>Calle Parota #22 Fracc. Parotales</p>
+                            </div>
+
+                            <div class="ceremony-time">
+                                19:00 PM
+                            </div>
+
+                            <div class="location-map-container">
+                                <a class="location-map" href="https://www.google.com.mx/maps/place/Sal%C3%B3n+de+Eventos+Campestre+Ma.+Elena/@19.3053161,-103.7521993,307m/data=!3m1!1e3!4m6!3m5!1s0x842545f5b982094d:0x4792fee62e99609b!8m2!3d19.3054418!4d-103.7516622!16s%2Fg%2F11h_b_28rk">Ver Mapa</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="itinerary">
+                    <h2 class="hidden">ORDEN DEL DÍA</h2>
+                    <img src="https://res.cloudinary.com/dfiaqxhba/image/upload/w_auto,dpr_auto,c_scale,q_auto,f_auto/v1677234638/myspecialday/bkfzpgfnpr92twvhicbm.webp" class="hidden">
+                </div>
+
+                <div class="dc-container hidden">
+                    <div class="dress-code">Código de Vestimenta</div>
+                    <div class="dc-type">FORMAL</div>
+                </div>
+
+                <div class="gt-container hidden">
+                    <div class="gt-title">Mesa de Regalos</div>
+                    <div class="gt-phrase">El regalo es opcional, lo mas importante para nosotros es tu compañía</div>
+                </div>
+
+                <div class="gift-options">
+                    <div class="gift-options-container">
+                        <div class="option hidden">
+                            <div class="logo"><img src="img/LIVERPOOL.webp" alt=""></div>
+                            <div>Número de Mesa de Regalos:</div>
+                            <div class="gift-code">51167878</div>
+                            <div class="button"><a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51167878">IR AL
+                                    SITIO</a></div>
+                        </div>
+
+                        <!-- <div class="option hidden">
+                            <div class="logo"><img src="img/amazon.png" alt=""></div>
+                            <div>Número de Mesa de Regalos:</div>
+                            <div>Maria & Antonio</div>
+                            <div class="button"><a href="https://www.amazon.com.mx/registries">IR AL SITIO</a></div>
+                        </div> -->
+
+                        <div class="option hidden">
+                            <div class="logo"><img src="img/slogo.png" alt=""></div>
+                            <div>
+                                <p>Jaime Castañeda Terrones</p>
+                                <p>Cuenta:</p>
+                                <p>56-68221078-3</p>
+                                <p>Clabe:</p>
+                                <p>014098566822107830</p>
+                                <!-- <p>Tarjeta:</p>
+                                <p>8840 0000 0000 0000</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hashtag-container">
+                    <div class="hashtag">
+                        <div class="insta-icon"><img src="img/instaicon.webp" alt=""></div>
+                        <!-- <i class="fa-brands fa-instagram"></i> -->
+                        <div class="v-line"></div>
+                        <div class="hashtag-text">#Itzel&Jaime</div>
+                    </div>
+                </div>
+
+
+                <div class="photo-container"></div>
+
+<!-- 
+                <div class="container">
+                    <div class="slideshow">
+                        <img src="https://res.cloudinary.com/dfiaqxhba/image/upload/w_auto,dpr_auto,c_scale,q_auto,f_auto/v1677234640/myspecialday/orgfzvqzlt4t5cdoxmq7.webp" class="slide">
+                        <img src="https://res.cloudinary.com/dfiaqxhba/image/upload/w_auto,dpr_auto,c_scale,q_auto,f_auto/v1677234640/myspecialday/g4peg6tucqqhmaiqzeq9.webp" class="slide">
+                        <img src="https://res.cloudinary.com/dfiaqxhba/image/upload/w_auto,dpr_auto,c_scale,q_auto,f_auto/v1677234639/myspecialday/osxm7w3rxvohnn7gdh82.webp" class="slide">
+                        <a class="prev-button">&#10094</a>
+                        <a class="next-button">&#10095</a>
+                    </div>
+                </div> -->
+
+
+
+                <div class="confirmation-container">
+                    <div class="confirmation-img">
+                        <div class="confirmation-title">Confirma tu<br>Asistencia</div>
+                    </div>
+                    <div class="confirmation-info">
+                        <div>
+                            <h2>CONTACTA A<br>MARÍA Y ANTONIO</h2>
+                            <p>Confirma tu asistencia llenando el formulario o ponte en contacto vía WhatsApp</p>
+                            <div class="gform-button"><button
+                                    onclick="window.location.href='https://forms.gle/pVZahjj9Pv2d3WSq6'">Confirmar
+                                    Asistencia</button></div>
+                            <div class="wp-button"><button
+                                    onclick="window.location.href='https://api.whatsapp.com/send/?phone=3121111178&text=Confirmo+mi+asistencia'">Enviar
+                                    Mensaje</button></div>
+                            <p class="confirmation-thanks">¡Gracias por tu mensaje!</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="brand-logo">
+                        <a href=""><img src="img/Vochito.png" alt=""></a>
+                        <p>My Special Day MX</p>
+                    </div>
+                    <div class="links-container">
+                        <a href="https://www.facebook.com/profile.php?id=100090320051284&mibextid=LQQJ4d"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                        <a href="https://instagram.com/myspecialday_mx?igshid=YmMyMTA2M2Y="><i class="fa-brands fa-instagram fa-2x"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=3121385796&text=Deseo+solicitar+informacion"><i
+                                class="fa-brands fa-whatsapp fa-2x"></i></a>
+                    </div>
+                    <div>
+            
+                    </div>
+
+        </section>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.min.js"></script>
+
+</body>
+
+</html>
